@@ -1,0 +1,109 @@
+{
+  "personalInfo": {
+    "name": "José Andradez",
+    "linkedIn": "https://www.linkedin.com/in/joseandradez/",
+    "summary": "I am an experienced Full Stack Developer with a passion for creating innovative software solutions. With a strong background in web and software development, I am seeking opportunities to contribute my skills and expertise to a dynamic team."
+  },
+  "professionalExperience": [
+    {
+      "title": "Full Stack Engineer",
+      "company": "Obi",
+      "period": "July 2022 - Present",
+      "responsibilities": [
+        "Develop web and mobile crypto wallet projects with a focus on user-friendly interfaces.",
+        "Utilizing React, React Native, and React Native Web, alongside Storybook, Cosmos, Jest, and TypeScript.",
+        "Developed key solutions, including workers for SMS, voice, and Telegram, leveraging Twilio Serverless and Cloudflare.",
+        "Actively engaged in Agile methodologies."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Deviants Factions",
+      "period": "October 2021 - July 2022",
+      "responsibilities": [
+        "Developed the front end of deviantsfactions.com and other web projects.",
+        "Contributed to smart contract programming using Rust for the Deviants Factions game.",
+        "Technologies: React, CSS, Recoil, Emotion CSS, Cosmos smart contracts.",
+        "Aptitudes: Blockchain, Decentralized Applications (DApps)."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "SR Consultores",
+      "period": "December 2018 - August 2019",
+      "responsibilities": [
+        "Developed internal tools for Walmart, enhancing React-based components.",
+        "Proficient in Next.js, Redux.js, and React Native.",
+        "Contributed to the user experience (UX) by creating prototypes and mockups."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "ReignDesign",
+      "period": "May 2018 - December 2018",
+      "responsibilities": [
+        "Contributed to the Browse project on falabella.com, migrating to React.js components.",
+        "Leveraged a technology stack including ReactJs, CSS, HTML5, JavaScript (ES6), and Webpack.",
+        "Played a crucial role in front-end development."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Yu-Track",
+      "period": "October 2017 - May 2018",
+      "responsibilities": [
+        "Engaged in full-stack development with a focus on JavaScript technologies.",
+        "Utilized Node.js, Express, MongoDB, jQuery, React.js, CSS3, HTML5, and Webpack.",
+        "Active involvement in Agile methodologies."
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Saecosoft C.A.",
+      "period": "January 2013 - November 2016",
+      "responsibilities": [
+        "Specialized in backend development, creating software interfaces for seamless communication between billing systems and cable tv and internet services to control subscriptions.",
+        "Utilized technologies such as Meteor.js, Orion, React.js, GraphQL with Apollo.js, and Ember.js.",
+        "Contributed to monitoring applications and prototypes, enhancing user experience (UX).",
+        "Built an SMS system with GSM modems, RabbitMQ, and Docker."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "TSU in IT",
+      "institution": "Cumaná Venezuela",
+      "details": "Technical career of 3 years, main focus on software development and network"
+    }
+  ],
+  "additionalInfo": "Most of the current tech knowledge are self taught",
+  "skills": [
+    "React",
+    "React Native",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Redux.js",
+    "GraphQL",
+    "JavaScript (ES6)",
+    "HTML5",
+    "CSS3",
+    "Webpack",
+    "Twilio",
+    "Cloudflare workers",
+    "Agile methodologies",
+    "Problem-solving",
+    "Teamwork"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "B2"
+    },
+    {
+      "language": "Spanish",
+      "level": "Native"
+    }
+  ],
+  "references": "Available upon request"
+}
