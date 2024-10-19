@@ -3,65 +3,78 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import portfolioData from "@/src/data/portfolioData";
+import useScroll from "@/src/hooks/useScroll";
 
 const Hero = () => {
   const [avatarOpacity, setAvatarOpacity] = useState(1);
-  const [parallaxY, setParallaxY] = useState(0);
+  const scrollPosition = useScroll();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroImage = document.getElementById("hero-image");
-      if (heroImage) {
-        const rect = heroImage.getBoundingClientRect();
-        const scrollProgress = Math.max(0, Math.min(1, rect.top / rect.height));
-        setAvatarOpacity(scrollProgress);
-        setParallaxY(window.scrollY * 0.5);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const heroImage = document.getElementById("hero-image");
+    if (heroImage) {
+      const rect = heroImage.getBoundingClientRect();
+      const scrollProgress = Math.max(0, Math.min(1, 1 - scrollPosition / rect.height));
+      setAvatarOpacity(scrollProgress);
+    }
+  }, [scrollPosition]);
 
   return (
-    <section className="relative bg-gradient text-foreground py-32 overflow-hidden">
-      <div className="container mx-auto px-6 text-center relative z-10">
+    <section className="relative text-foreground pt-32 overflow-hidden  min-h-screen flex flex-col justify-between ">
+      <div className="container mx-auto px-6 text-center relative z-10  flex flex-1 flex-col justify-center">
         <div className="mb-8">
           <div
             style={{ opacity: avatarOpacity }}
             className="transition-opacity duration-300"
           >
             <Image
-              src="https://via.placeholder.com/200x200"
+              src={portfolioData.personalInfo.image}
               alt={portfolioData.personalInfo.name}
-              width={200}
-              height={200}
+              width={250}
+              height={250}
               className="rounded-full mx-auto border-4 border-primary"
               id="hero-image"
             />
           </div>
         </div>
         <h1 className="text-5xl font-bold mb-4 text-shadow">
-          Hi, I'm {portfolioData.personalInfo.name}
+          Hi, I'm <span className="text-primary">{portfolioData.personalInfo.name}</span>
         </h1>
-        <p className="text-xl mb-8 text-accent">
+
+        <p className="max-md:text-md md:text-lg mb-8 text-foreground bg-transparent opacity-80">
           {portfolioData.personalInfo.summary}
         </p>
         <a
           href="#contact"
-          className="bg-primary text-background py-3 px-8 rounded-full font-bold hover:bg-accent transition duration-300 inline-block"
+          className="bg-primary text-background py-3 px-8 rounded-full font-bold hover:bg-accent transition duration-300 inline-block w-fit mx-auto"
         >
           Get in touch
         </a>
       </div>
-      <div className="absolute bottom-0 left-0 right-0">
+
+      <div className="relative">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="var(--secondary)"
             fillOpacity="1"
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            d="M0,160L60,170.7C120,181,240,203,360,192C480,181,600,139,720,128C840,117,960,139,1080,149.3C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
         </svg>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8 text-primary"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
       </div>
     </section>
   );

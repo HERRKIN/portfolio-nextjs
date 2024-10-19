@@ -6,8 +6,9 @@
   --background: #0a0e17;
   --foreground: #e0e0e0;
   --primary: #3498db;
-  --secondary: #1a202c;
-  --accent: #2ecc71;
+  --secondary: #0d1420;
+  --card-background: #1e2635;
+  --accent: #4a6785;
   --error: #e74c3c;
 }
 
@@ -21,6 +22,8 @@ body {
   background: var(--background);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 @layer utilities {
@@ -34,5 +37,80 @@ body {
   
   .text-shadow {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+}
+
+.blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(150px);
+  animation: float 8s infinite ease-in-out;
+}
+
+.blob:nth-child(1) {
+  top: -20%;
+  left: 20%;
+  animation-name: float-vertical;
+  animation-duration: 10s;
+}
+
+.blob:nth-child(2) {
+  top: 40%;
+  left: -20%;
+  animation-name: float-horizontal;
+  animation-duration: 12s;
+}
+
+.blob:nth-child(3) {
+  top: 120%;
+  left: 70%;
+  animation-name: float-diagonal;
+  animation-duration: 14s;
+}
+
+@keyframes float-vertical {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    top: -20%;
+  }
+  50% {
+    transform: translateY(140vh) scale(1.1);
+    top: 120%;
+  }
+}
+
+@keyframes float-horizontal {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+    left: -20%;
+  }
+  50% {
+    transform: translateX(120vw) scale(1.1);
+    left: 120%;
+  }
+}
+
+@keyframes float-diagonal {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    top: 120%;
+    left: 70%;
+  }
+  50% {
+    transform: translate(-90vw, -140vh) scale(1.1);
+    top: -20%;
+    left: -20%;
   }
 }

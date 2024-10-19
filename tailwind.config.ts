@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        cardBackground: "var(--card-background)",
         accent: "var(--accent)",
         error: "var(--error)",
       },

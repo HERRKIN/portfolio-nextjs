@@ -1,3 +1,5 @@
+import Blobs from "../components/blobs";
+import Header from "../components/Header";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -19,6 +21,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-background text-foreground min-h-screen`}
       >
+        <Blobs />
+        <Header />
         {children}
       </body>
     </html>

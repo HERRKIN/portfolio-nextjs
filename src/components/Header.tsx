@@ -4,24 +4,34 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import portfolioData from "@/src/data/portfolioData";
+import useScroll from "@/src/hooks/useScroll";
 
 const Header = () => {
   const [avatarOpacity, setAvatarOpacity] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const scrollPosition = useScroll();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroImage = document.getElementById("hero-image");
-      if (heroImage) {
-        const rect = heroImage.getBoundingClientRect();
-        const scrollProgress =
-          1 - Math.max(0, Math.min(1, rect.top / rect.height));
-        setAvatarOpacity(scrollProgress);
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
+    const heroImage = document.getElementById("hero-image");
+    if (heroImage) {
+      const rect = heroImage.getBoundingClientRect();
+      const scrollProgress = Math.max(0, Math.min(1, 1 - scrollPosition / rect.height));
+      setAvatarOpacity(1 - scrollProgress);
+    }
+  }, [scrollPosition, isMobile]);
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-gradient-to-b from-background to-transparent backdrop-blur-md shadow-md z-10">
@@ -32,19 +42,29 @@ const Header = () => {
               href="/"
               className="text-xl font-bold text-foreground flex items-center"
             >
-              <div
-                style={{ opacity: avatarOpacity }}
-                className="transition-opacity duration-300"
-              >
-                <Image
-                  src="https://via.placeholder.com/40x40"
-                  alt={portfolioData.personalInfo.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full mr-2 border-2 border-primary"
-                />
+              <div className="relative w-10 h-10 mr-2">
+                {!isMobile && (
+                  <div
+                    className="absolute inset-0 rounded-full bg-primary transition-opacity duration-300"
+                    style={{ opacity: 1 - avatarOpacity }}
+                  ></div>
+                )}
+                <div
+                  style={{ opacity: isMobile ? 1 : avatarOpacity }}
+                  className="absolute inset-0 transition-opacity duration-300"
+                >
+                  <Image
+                    src={portfolioData.personalInfo.image}
+                    alt={portfolioData.personalInfo.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full border-2 border-primary"
+                  />
+                </div>
               </div>
-              {portfolioData.personalInfo.name}
+              <span className="hidden md:block text-primary">
+                {portfolioData.personalInfo.name}
+              </span>
             </Link>
           </li>
           <li>
@@ -52,7 +72,7 @@ const Header = () => {
               <li>
                 <Link
                   href="#projects"
-                  className="text-foreground hover:text-primary transition duration-300"
+                  className="text-foreground hover:text-primary transition duration-300 font-bold"
                 >
                   Projects
                 </Link>
@@ -60,7 +80,7 @@ const Header = () => {
               <li>
                 <Link
                   href="#skills"
-                  className="text-foreground hover:text-primary transition duration-300"
+                  className="text-foreground hover:text-primary transition duration-300 font-bold"
                 >
                   Skills
                 </Link>
@@ -68,7 +88,7 @@ const Header = () => {
               <li>
                 <Link
                   href="#contact"
-                  className="text-foreground hover:text-primary transition duration-300"
+                  className="text-foreground hover:text-primary transition duration-300 font-bold"
                 >
                   Contact
                 </Link>
