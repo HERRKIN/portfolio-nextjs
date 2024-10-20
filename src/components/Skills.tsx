@@ -27,7 +27,7 @@ const Skills = () => {
             {portfolioData.skills.stack.map((skill, index) => (
               <div
                 key={index}
-                className="bg-secondary rounded-lg p-4 text-center flex flex-col items-center"
+                className="rounded-lg p-4 text-center flex flex-col items-center"
               >
                 <ImageWithDotFallback
                   src={skill.icon}
@@ -40,7 +40,7 @@ const Skills = () => {
               </div>
             ))}
             <div
-              className="bg-secondary rounded-lg p-4 text-center flex flex-col items-center justify-center"
+              className="rounded-lg p-4 text-center flex flex-col items-center justify-center"
             >
               <span className="text-primary font-semibold">And more..</span>
             </div>
@@ -50,7 +50,7 @@ const Skills = () => {
             {portfolioData.skills.softSkills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-secondary rounded-lg p-4 text-center"
+                className="bg-cardBackground rounded-lg p-4 text-center"
               >
                 <span className="text-primary font-semibold">{skill}</span>
               </div>
