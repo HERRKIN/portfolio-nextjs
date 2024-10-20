@@ -2,7 +2,7 @@
   "personalInfo": {
     "name": "José Andradez",
     "linkedIn": "https://www.linkedin.com/in/joseandradez/",
-    "image": "/avatar.jpeg",
+    "image": "https://herrkin.github.io/portfolio-nextjs/avatar.jpeg",
     "summary": "I build scalable web and crypto (Web3) solutions using React, Node.js, TypeScript, and blockchain technologies.",
     "github": "https://github.com/HERRKIN"
   },

@@ -32,6 +32,7 @@ export interface PortfolioData {
     softSkills: string[];
   };
   additionalInfo: string;
+  
 }
 
 const typedPortfolioData: PortfolioData = portfolioData;
