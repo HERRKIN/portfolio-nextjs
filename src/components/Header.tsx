@@ -71,10 +71,10 @@ const Header = () => {
             <ul className="flex space-x-6">
               <li>
                 <Link
-                  href="#projects"
+                  href="#experience"
                   className="text-foreground hover:text-primary transition duration-300 font-bold"
                 >
-                  Projects
+                  Experience
                 </Link>
               </li>
               <li>

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-background text-foreground min-h-screen`}
+        className={`${inter.className} bg-background text-foreground h-[100dvh]`}
       >
         <Blobs />
         <Header />

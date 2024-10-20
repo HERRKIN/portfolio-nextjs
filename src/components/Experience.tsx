@@ -4,7 +4,7 @@ const {professionalExperience} = Data;
 
 const Projects = () => {
   return (
-    <section id="projects" className="pb-20 bg-secondary">
+    <section id="experience" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
           My Experience

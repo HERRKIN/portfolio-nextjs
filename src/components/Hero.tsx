@@ -20,7 +20,7 @@ const Hero = () => {
   }, [scrollPosition]);
 
   return (
-    <section className="relative text-foreground pt-32 overflow-hidden min-h-screen flex flex-col">
+    <section className="relative text-foreground pt-32 overflow-hidden h-[100dvh] flex flex-col">
       <div className="container mx-auto px-6 text-center relative z-10 flex-grow justify-center flex flex-col">
         <div className="mb-8">
           <div
@@ -32,12 +32,12 @@ const Hero = () => {
               alt={Data.personalInfo.name}
               width={250}
               height={250}
-              className="rounded-full mx-auto border-4 border-primary"
+              className="rounded-full mx-auto border-4 border-primary max-md:w-40 max-md:h-40"
               id="hero-image"
             />
           </div>
         </div>
-        <h1 className="text-5xl font-bold mb-4 text-shadow">
+        <h1 className="text-5xl max-md:text-3xl font-bold mb-4 text-shadow">
           Hi, I&apos;m <span className="text-primary">{Data.personalInfo.name}</span>
         </h1>
 
