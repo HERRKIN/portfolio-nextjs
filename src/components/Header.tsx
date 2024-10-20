@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import ImageWithDotFallback from "./ImageDotFallback";
 import { useEffect, useState } from "react";
 import portfolioData from "@/src/data/portfolioData";
 import useScroll from "@/src/hooks/useScroll";
@@ -53,7 +53,7 @@ const Header = () => {
                   style={{ opacity: isMobile ? 1 : avatarOpacity }}
                   className="absolute inset-0 transition-opacity duration-300"
                 >
-                  <Image
+                  <ImageWithDotFallback
                     src={portfolioData.personalInfo.image}
                     alt={portfolioData.personalInfo.name}
                     width={40}

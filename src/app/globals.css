@@ -6,8 +6,8 @@
   --background: #0a0e17;
   --foreground: #e0e0e0;
   --primary: #3498db;
-  --secondary: #0d1420;
-  --card-background: #1e2635;
+  --secondary: #141c2c;
+  --card-background: #1a202c;
   --accent: #4a6785;
   --error: #e74c3c;
 }
@@ -52,65 +52,81 @@ body {
 
 .blob {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  filter: blur(150px);
-  animation: float 8s infinite ease-in-out;
+  filter: blur(100px);
+  opacity: 0.5;
+  will-change: transform;
 }
 
 .blob:nth-child(1) {
-  top: -20%;
-  left: 20%;
-  animation-name: float-vertical;
-  animation-duration: 10s;
+  background-color: rgba(52, 152, 219, 0.7);
+  animation: float-1 20s infinite ease-in-out;
 }
 
 .blob:nth-child(2) {
-  top: 40%;
-  left: -20%;
-  animation-name: float-horizontal;
-  animation-duration: 12s;
+  background-color: rgba(155, 89, 182, 0.7);
+  animation: float-2 23s infinite ease-in-out;
 }
 
 .blob:nth-child(3) {
-  top: 120%;
-  left: 70%;
-  animation-name: float-diagonal;
-  animation-duration: 14s;
+  background-color: rgba(231, 76, 60, 0.7);
+  animation: float-3 26s infinite ease-in-out;
 }
 
-@keyframes float-vertical {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    top: -20%;
-  }
-  50% {
-    transform: translateY(140vh) scale(1.1);
-    top: 120%;
-  }
+@keyframes float-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(75vw, 25vh) scale(1.1); }
+  50% { transform: translate(25vw, 75vh) scale(1); }
+  75% { transform: translate(75vw, 75vh) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
-@keyframes float-horizontal {
-  0%, 100% {
-    transform: translateX(0) scale(1);
-    left: -20%;
-  }
-  50% {
-    transform: translateX(120vw) scale(1.1);
-    left: 120%;
-  }
+@keyframes float-2 {
+  0% { transform: translate(100vw, 0) scale(1); }
+  33% { transform: translate(0, 50vh) scale(1.1); }
+  66% { transform: translate(50vw, 100vh) scale(1); }
+  100% { transform: translate(100vw, 0) scale(1.1); }
 }
 
-@keyframes float-diagonal {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    top: 120%;
-    left: 70%;
+@keyframes float-3 {
+  0% { transform: translate(50vw, 100vh) scale(1); }
+  33% { transform: translate(75vw, 25vh) scale(1.1); }
+  66% { transform: translate(25vw, 50vh) scale(1); }
+  100% { transform: translate(50vw, 100vh) scale(1.1); }
+}
+
+@media (max-width: 768px) {
+  .blob {
+    width: 250px;
+    height: 250px;
+    filter: blur(50px);
   }
-  50% {
-    transform: translate(-90vw, -140vh) scale(1.1);
-    top: -20%;
-    left: -20%;
+
+  .blob:nth-child(1) { animation-duration: 15s; }
+  .blob:nth-child(2) { animation-duration: 18s; }
+  .blob:nth-child(3) { animation-duration: 21s; }
+
+  @keyframes float-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(60vw, 20vh) scale(1.05); }
+    50% { transform: translate(20vw, 60vh) scale(1); }
+    75% { transform: translate(60vw, 60vh) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  @keyframes float-2 {
+    0% { transform: translate(80vw, 0) scale(1); }
+    33% { transform: translate(0, 40vh) scale(1.05); }
+    66% { transform: translate(40vw, 80vh) scale(1); }
+    100% { transform: translate(80vw, 0) scale(1.05); }
+  }
+
+  @keyframes float-3 {
+    0% { transform: translate(40vw, 80vh) scale(1); }
+    33% { transform: translate(60vw, 20vh) scale(1.05); }
+    66% { transform: translate(20vw, 40vh) scale(1); }
+    100% { transform: translate(40vw, 80vh) scale(1.05); }
   }
 }

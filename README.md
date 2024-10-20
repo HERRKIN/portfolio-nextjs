@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# José Andradez - Developer Portfolio
 
-## Getting Started
+This is a modern, responsive developer portfolio built with Next.js, TypeScript, and Tailwind CSS. It showcases my skills, projects, and professional experience in web development.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can view the live portfolio at: [https://joseandradez.github.io/portfolio-nextjs/](https://joseandradez.github.io/portfolio-nextjs/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Responsive design that looks great on all devices
+- Dark mode with custom color scheme
+- Animated background with floating blobs
+- Sections for projects, skills, and contact information
+- TypeScript for improved type safety and developer experience
+- Tailwind CSS for rapid and customizable styling
+- Next.js for optimized performance and easy deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Local Development
 
-## Learn More
+To run this project locally:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```
+   git clone https://github.com/joseandradez/portfolio-nextjs.git
+   cd portfolio-nextjs
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Run the development server:
+   ```
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To customize this portfolio for your own use:
+
+1. Update the `src/data/portfolio_data.json` file with your personal information, skills, and projects.
+2. Replace the profile image in the `public` directory.
+3. Modify the color scheme in `src/app/globals.css` if desired.
+
+## Deployment
+
+This project is set up for easy deployment to GitHub Pages. To deploy your changes:
+
+1. Push your changes to the `main` branch.
+2. Run the deployment script:
+   ```
+   npm run deploy
+   ```
+
+This will build the project, create a `gh-pages` branch (if it doesn't exist), and push the built files to that branch.
+
+## Technologies Used
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- React
+- GitHub Pages
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+José Andradez - [LinkedIn](https://www.linkedin.com/in/joseandradez/)
+
+Project Link: [https://github.com/joseandradez/portfolio-nextjs](https://github.com/joseandradez/portfolio-nextjs)

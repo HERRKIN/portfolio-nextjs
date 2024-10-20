@@ -2,8 +2,9 @@
   "personalInfo": {
     "name": "José Andradez",
     "linkedIn": "https://www.linkedin.com/in/joseandradez/",
-    "image": "/portfolio-nextjs/avatar.jpeg",
-    "summary": "I build scalable web and crypto (Web3) solutions using React, Node.js, TypeScript, and blockchain technologies."
+    "image": "/avatar.jpeg",
+    "summary": "I build scalable web and crypto (Web3) solutions using React, Node.js, TypeScript, and blockchain technologies.",
+    "github": "https://github.com/HERRKIN"
   },
   "professionalExperience": [
     {

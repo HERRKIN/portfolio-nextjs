@@ -1,15 +1,8 @@
 "use client";
 import portfolioData from "@/src/data/portfolioData";
-import Image from "next/image";
-import { useState } from "react";
+import ImageWithDotFallback from "./ImageDotFallback";
 
 const Skills = () => {
-  const [brokenImages, setBrokenImages] = useState<{ [key: string]: boolean }>({});
-
-  const handleImageError = (skillName: string) => {
-    setBrokenImages(prev => ({ ...prev, [skillName]: true }));
-  };
-
   return (
     <section id="skills" className="relative">
       <div className="w-full h-24 overflow-hidden rotate-180">
@@ -36,29 +29,21 @@ const Skills = () => {
                 key={index}
                 className="bg-secondary rounded-lg p-4 text-center flex flex-col items-center"
               >
-                {brokenImages[skill.name] ? (
-                  <div className="w-10 h-10 bg-blue-500 rounded-full mb-2"></div>
-                ) : (
-                  <Image
-                    src={skill.icon}
-                    alt={skill.name}
-                    width={40}
-                    height={40}
-                    className="mb-2"
-                    onError={() => handleImageError(skill.name)}
-                  />
-                )}
+                <ImageWithDotFallback
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={40}
+                  height={40}
+                  className="mb-2"
+                />
                 <span className="text-primary font-semibold">{skill.name}</span>
               </div>
             ))}
-          <div
-       
-                className="bg-secondary rounded-lg p-4 text-center flex flex-col items-center justify-center"
-              >
-              
-                <span className="text-primary font-semibold">And more..</span>
-              </div>
-            
+            <div
+              className="bg-secondary rounded-lg p-4 text-center flex flex-col items-center justify-center"
+            >
+              <span className="text-primary font-semibold">And more..</span>
+            </div>
           </div>
           <h3 className="text-2xl font-semibold mb-4 text-foreground">Soft Skills</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -70,7 +55,6 @@ const Skills = () => {
                 <span className="text-primary font-semibold">{skill}</span>
               </div>
             ))}
-            
           </div>
         </div>
       </div>

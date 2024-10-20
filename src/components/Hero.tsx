@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import ImageWithDotFallback from "./ImageDotFallback";
 import { useEffect, useState } from "react";
-import portfolioData from "@/src/data/portfolioData";
+import Data from "@/src/data/portfolioData";
 import useScroll from "@/src/hooks/useScroll";
+
 
 const Hero = () => {
   const [avatarOpacity, setAvatarOpacity] = useState(1);
@@ -19,16 +20,16 @@ const Hero = () => {
   }, [scrollPosition]);
 
   return (
-    <section className="relative text-foreground pt-32 overflow-hidden  min-h-screen flex flex-col justify-between ">
+    <section className="relative text-foreground pt-32 overflow-hidden min-h-[100dvh] flex flex-col justify-between">
       <div className="container mx-auto px-6 text-center relative z-10  flex flex-1 flex-col justify-center">
         <div className="mb-8">
           <div
             style={{ opacity: avatarOpacity }}
             className="transition-opacity duration-300"
           >
-            <Image
-              src={portfolioData.personalInfo.image}
-              alt={portfolioData.personalInfo.name}
+            <ImageWithDotFallback
+              src={Data.personalInfo.image}
+              alt={Data.personalInfo.name}
               width={250}
               height={250}
               className="rounded-full mx-auto border-4 border-primary"
@@ -37,11 +38,11 @@ const Hero = () => {
           </div>
         </div>
         <h1 className="text-5xl font-bold mb-4 text-shadow">
-          Hi, I&apos;m <span className="text-primary">{portfolioData.personalInfo.name}</span>
+          Hi, I&apos;m <span className="text-primary">{Data.personalInfo.name}</span>
         </h1>
 
         <p className="max-md:text-md md:text-lg mb-8 text-foreground bg-transparent opacity-80">
-          {portfolioData.personalInfo.summary}
+          {Data.personalInfo.summary}
         </p>
         <a
           href="#contact"
@@ -59,7 +60,7 @@ const Hero = () => {
             d="M0,160L60,170.7C120,181,240,203,360,192C480,181,600,139,720,128C840,117,960,139,1080,149.3C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
         </svg>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 text-primary"

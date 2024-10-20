@@ -1,7 +1,7 @@
 "use client";
+import Data from "@/src/data/portfolioData";
 
-
-const Contact = () => {
+const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 bg-secondary">
@@ -11,7 +11,7 @@ const Contact = () => {
         </h2>
         <div className="flex justify-center space-x-8 mb-8">
           <a
-            href="https://www.linkedin.com/in/joseandradez/"
+            href={Data.personalInfo.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-primary transition duration-300"
@@ -27,7 +27,7 @@ const Contact = () => {
             </svg>
           </a>
           <a
-            href="https://github.com/HERRKIN"
+            href={Data.personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-primary transition duration-300"
