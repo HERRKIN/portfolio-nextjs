@@ -37,7 +37,7 @@ const Hero = () => {
           </div>
         </div>
         <h1 className="text-5xl font-bold mb-4 text-shadow">
-          Hi, I'm <span className="text-primary">{portfolioData.personalInfo.name}</span>
+          Hi, I&apos;m <span className="text-primary">{portfolioData.personalInfo.name}</span>
         </h1>
 
         <p className="max-md:text-md md:text-lg mb-8 text-foreground bg-transparent opacity-80">

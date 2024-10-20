@@ -1,4 +1,3 @@
-import Image from "next/image";
 import portfolioData from "@/src/data/portfolioData";
 
 const Projects = () => {
