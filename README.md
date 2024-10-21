@@ -4,7 +4,7 @@ This is a modern, responsive developer portfolio built with Next.js, TypeScript,
 
 ## Live Demo
 
-You can view the live portfolio at: [https://joseandradez.github.io/portfolio-nextjs/](https://joseandradez.github.io/portfolio-nextjs/)
+You can view the live portfolio at: [here](https://herrkin.github.io/portfolio-nextjs/)
 
 ## Features
 
@@ -22,7 +22,7 @@ To run this project locally:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/joseandradez/portfolio-nextjs.git
+   git clone https://github.com/herrkin/portfolio-nextjs.git
    cd portfolio-nextjs
    ```
 
