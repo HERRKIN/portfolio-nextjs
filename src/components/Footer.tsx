@@ -8,6 +8,9 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} {portfolioData.personalInfo.name}.
           All rights reserved.
         </p>
+        <p className="mt-2 text-sm">
+          Built with Next.js, React, and Tailwind CSS. Icons provided by Devicons.
+        </p>
       </div>
     </footer>
   );

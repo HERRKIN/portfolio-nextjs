@@ -66,9 +66,16 @@ This will build the project, create a `gh-pages` branch (if it doesn't exist), a
 - React
 - GitHub Pages
 
-## License
+## Licenses
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
+
+### Third-Party Libraries
+
+- [Next.js](https://nextjs.org/) - [MIT License](https://github.com/vercel/next.js/blob/canary/LICENSE)
+- [React](https://reactjs.org/) - [MIT License](https://github.com/facebook/react/blob/main/LICENSE)
+- [Tailwind CSS](https://tailwindcss.com/) - [MIT License](https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE)
+- [Devicons](https://devicon.dev/) - [MIT License](https://github.com/devicons/devicon/blob/master/LICENSE)
 
 ## Contact
 
